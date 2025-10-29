@@ -1,0 +1,39 @@
+.rsvp {
+  background: var(--beige);
+  text-align: center;
+  padding: 3rem 1rem;
+
+  .panel-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--oliva);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+  }
+
+.confirm-btn-container {
+  display: flex;
+  justify-content: center;
+
+  .btn.primary {
+    background: var(--dorado);
+    color: white;
+    font-weight: 600;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.2s ease, filter 0.2s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      filter: brightness(0.9);
+    }
+  }
+}
+
+}

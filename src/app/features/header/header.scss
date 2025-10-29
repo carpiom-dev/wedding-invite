@@ -1,0 +1,31 @@
+.topbar {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, .9);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px;
+}
+
+.brand {
+  font-weight: 700;
+  color: var(--oliva-dark);
+  font-size: .95rem;
+}
+
+.btn {
+  background: var(--oliva);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+}
