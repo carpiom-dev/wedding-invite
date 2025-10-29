@@ -1,0 +1,62 @@
+<section class="details" id="details" appReveal>
+  <div class="container">
+    <h2 class="title">Detalles del Evento</h2>
+
+    <div class="info-grid">
+      <div class="card"><strong>📅 Fecha</strong><p>{{ fecha() }}</p></div>
+      <div class="card"><strong>🕓 Hora</strong><p>{{ horaCeremonia() }}</p></div>
+      <div class="card"><strong>📍 Lugar</strong><p>{{ lugar() }}</p></div>
+    </div>
+
+    @if (mapaUrl()) {
+      <h2 class="title">Cómo llegar</h2>
+      <div class="map-wrap">
+        <iframe [src]="mapaUrl()" loading="lazy" allowfullscreen></iframe>
+      </div><br>
+      <div class="confirm-btn-container">
+        <a
+          class="btn primary"
+          href="https://maps.app.goo.gl/5v5JcZHs8SqNA7BW8"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Abrir en Google Maps
+        </a>
+      </div>
+    }
+
+    <h3 class="subtitle">Vestimenta</h3>
+   <p class="dress-code">
+      Para esta celebración, les pedimos a nuestros queridos invitados que vistan con hermosos colores. <br />
+      Les recordamos que el blanco estará reservado únicamente para los novios.
+    </p>
+
+    <h3 class="subtitle">Obsequio</h3>
+    <p class="gift-text">
+      Agradecemos su cariño y preferimos un detalle en <strong>sobre cerrado</strong> 💌 <br />
+      o si desean, pueden realizar una transferencia a cualquiera de las siguientes cuentas:
+    </p>
+
+    <div class="confirm-btn-container">
+      <button type="button" class="btn secondary" (click)="toggleCuentas()">
+        {{ mostrarCuentas() ? 'Ocultar cuentas 💳' : 'Ver cuentas bancarias 💰' }}
+      </button>
+    </div>
+
+    @if (mostrarCuentas()) {
+      <div class="bank-list animate-fade">
+        @for (banco of bancos(); track banco.nombre) {
+          <div class="bank-card">
+            <strong>{{ banco.nombre }}</strong>
+            <p>
+              <span><b>{{ banco.tipo }}: </b>{{ banco.cuenta }}</span><br />
+              <span><b>Titular: </b> {{ banco.titular }}</span><br />
+              <span><b>Correo: </b> {{ banco.email }}</span><br />
+              <span><b>CI: </b> {{ banco.cedula }}</span>
+            </p>
+          </div>
+        }
+      </div>
+    }
+  </div>
+</section>

@@ -1,0 +1,32 @@
+<section class="hero">
+  <img src="assets/img/hero.jpg" alt="Adrián y Josselyn" class="hero-bg" />
+  <div class="overlay"></div>
+
+  <div class="hero-content">
+    @if (guestName()) {
+      <h1 class="nombres">Invitado: {{ guestName() }}</h1>
+      @if (guestCount()) {
+        <p class="frase">Número de invitados: {{ guestCount() }}</p>
+      }
+    } @else {
+      <h1 class="nombres">Adrián & Josselyn</h1>
+    }
+    <p class="frase">“Dios marcó nuestro camino, y en su amor hallamos el nuestro.”</p>
+    <div class="actions">
+      <button class="btn primary" (click)="toggleMusic()">
+        @if (audio.playing()) { ⏸️ Pausar } @else { ▶️ Música }
+      </button>
+      <button class="btn ghost" (click)="scrollToDetalles()">Ver detalles</button>
+    </div>
+  </div>
+
+  @if (audio.blocked()) {
+    <div class="music-modal">
+      <div class="modal-box">
+        <div class="heart"></div>
+        <p>Toca para activar la música 🎵</p>
+        <button (click)="toggleMusic()" class="btn primary">Reproducir</button>
+      </div>
+    </div>
+  }
+</section>

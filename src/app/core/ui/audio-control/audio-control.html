@@ -1,0 +1,19 @@
+<!-- 🔘 Botón flotante -->
+<button
+  class="music-fab"
+  (click)="toggleMusic()"
+  [class.playing]="audio.playing()"
+>
+  @if (audio.playing()) { ⏸️ } @else { ▶️ }
+</button>
+
+<!-- 🎵 Modal elegante -->
+@if (audio.blocked()) {
+  <div class="music-modal">
+    <div class="music-modal-content">
+      <p>🎵 Toca la pantalla para activar la música</p>
+      <button class="btn" (click)="toggleMusic()">Activar</button>
+      <button class="close" (click)="closeModal()">✕</button>
+    </div>
+  </div>
+}

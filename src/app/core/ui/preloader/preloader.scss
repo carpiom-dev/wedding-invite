@@ -1,0 +1,5 @@
+.pre{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:var(--beige);z-index:9999;transition:opacity .4s}
+.heart{width:80px;height:80px;background:var(--dorado);position:relative;transform:rotate(45deg);animation:beat 1s infinite}
+.heart::before,.heart::after{content:'';position:absolute;width:80px;height:80px;background:var(--dorado);border-radius:50%}
+.heart::before{top:-40px;left:0}.heart::after{top:0;left:-40px}
+@keyframes beat{0%,100%{transform:rotate(45deg) scale(1)}50%{transform:rotate(45deg) scale(1.18)}}

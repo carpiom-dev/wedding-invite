@@ -1,59 +1,49 @@
-# WeddingInvite
+# 💒 Wedding Invite — Invitación Digital de Boda
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.6.
+Una invitación digital moderna, elegante y totalmente interactiva, creada con **Angular 20**, **SCSS**, y buenas prácticas de **UX/UI**.  
+Diseñada para adaptarse a cualquier dispositivo y ofrecer una experiencia encantadora con música, animaciones suaves y enlaces personalizados para cada invitado.
 
-## Development server
+---
 
-To start a local development server, run:
+## ✨ Características principales
+
+- 🎵 **Música ambiental automática** con control flotante y modal interactivo.
+- 🧑‍🤝‍🧑 **Enlaces personalizados por invitado** (`?nombre=Juan&invitados=2`).
+- ⏳ **Cuenta regresiva animada** hacia el día del evento.
+- 🗺️ **Detalles del evento**: fecha, hora, ubicación, vestimenta y obsequios.
+- 💌 **Diseño elegante** verde oliva & dorado con tipografía fina.
+- 🖼️ **Galería responsive** con imágenes representativas.
+- 💫 **Animaciones globales** tipo *scroll reveal*.
+- 📱 **Diseño 100% responsive** (web y móvil).
+- 🔊 **Autoplay seguro** con fallback elegante para navegadores bloqueantes.
+- 🧭 **Scroll suave** y navegación intuitiva.
+- 🧾 **Footer con créditos** y botón “volver arriba”.
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+| Tecnología | Uso |
+|-------------|-----|
+| **Angular 20** | Framework base (standalone components + signals) |
+| **SCSS** | Estilos modulares y variables globales |
+| **TypeScript** | Lógica de interacción y componentes |
+| **HTML5 + CSS3** | Estructura semántica y animaciones |
+| **Firebase / Hosting (opcional)** | Para deploy y RSVP |
+
+---
+
+## ⚙️ Instalación local
 
 ```bash
+# Clonar el repositorio
+git clone https://github.com/tuusuario/wedding-invite-angular.git
+
+# Entrar al directorio
+cd wedding-invite-angular
+
+# Instalar dependencias
+npm install
+
+# Ejecutar en modo desarrollo
 ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

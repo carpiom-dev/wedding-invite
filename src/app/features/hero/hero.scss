@@ -1,0 +1,250 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    filter: brightness(0.6);
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 1rem;
+    max-width: 720px;
+
+    .nombres {
+      font-family: 'Tangerine', cursive;
+      font-size: 5rem !important;
+      font-weight: 700;
+      color: var(--dorado, #d6b26d);
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+      margin-bottom: 1rem;
+    }
+
+    .frase {
+      font-size: 3rem;
+      font-family: 'Tangerine', cursive;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      .btn {
+        font-weight: 600;
+        padding: 10px 22px;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &.primary {
+          background: var(--dorado, #d6b26d);
+          color: #fff;
+          border: none;
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+
+        &.ghost {
+          background: transparent;
+          color: #fff;
+          border: 2px solid #fff;
+          &:hover {
+            background: rgba(255, 255, 255, 0.15);
+          }
+        }
+      }
+    }
+  }
+
+  /* 🎵 Modal */
+  .music-modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+
+    .modal-box {
+      background: #fff;
+      color: #333;
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      width: 90%;
+      max-width: 320px;
+      animation: fadeInUp 0.5s ease;
+
+      .heart {
+        width: 60px;
+        height: 60px;
+        background: var(--dorado, #d6b26d);
+        margin: 0 auto 1rem;
+        position: relative;
+        transform: rotate(45deg);
+        animation: beat 1.2s infinite;
+
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          width: 60px;
+          height: 60px;
+          background: var(--dorado, #d6b26d);
+          border-radius: 50%;
+        }
+
+        &::before {
+          top: -30px;
+          left: 0;
+        }
+
+        &::after {
+          left: -30px;
+          top: 0;
+        }
+      }
+
+      p {
+        margin-bottom: 1rem;
+        font-weight: 500;
+      }
+
+      .btn.primary {
+        background: var(--dorado, #d6b26d);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 999px;
+      }
+    }
+  }
+
+  /* 🎵 Botón flotante */
+  .music-fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--dorado, #d6b26d);
+    border: none;
+    color: white;
+    font-size: 1.4rem;
+    border-radius: 50%;
+    width: 54px;
+    height: 54px;
+    z-index: 50;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease;
+    &:hover {
+      transform: scale(1.1);
+    }
+    &.playing {
+      background: var(--oliva, #69803a);
+    }
+  }
+
+  @keyframes beat {
+    0%,
+    100% {
+      transform: rotate(45deg) scale(1);
+    }
+    50% {
+      transform: rotate(45deg) scale(1.2);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nombres {
+      font-size: 2.4rem;
+    }
+    .frase {
+      font-size: 1rem;
+    }
+  }
+}
+
+/* ✨ Aparición lenta y elegante del texto */
+@keyframes fadeInSoftSlow {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(6px);
+  }
+  60% {
+    opacity: 0.7;
+    transform: translateY(15px);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* Aplica animación a todo el contenido */
+.hero-content {
+  opacity: 0;
+  animation: fadeInSoftSlow 2.4s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+/* Nombres: un poco más tarde */
+.hero-content .nombres {
+  opacity: 0;
+  animation: fadeInSoftSlow 2.8s ease-out forwards;
+  animation-delay: 0.8s;
+}
+
+/* Frase: aún más tarde para crear efecto secuencial */
+.hero-content .frase {
+  opacity: 0;
+  animation: fadeInSoftSlow 3s ease-out forwards;
+  animation-delay: 1.5s;
+}
+
+/* Botones: última parte que aparece */
+.hero-content .actions {
+  opacity: 0;
+  animation: fadeInSoftSlow 2.5s ease-out forwards;
+  animation-delay: 2.2s;
+}
