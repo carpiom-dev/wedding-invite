@@ -14,7 +14,7 @@ export class DetailsComponent {
 
   lugar = signal('Club de Tropas de la CTE — Guayaquil');
   fecha = signal('Sábado 31 de enero de 2026');
-  horaCeremonia = signal('5:00 PM (Ceremonia & Recepción)');
+  horaCeremonia = signal('5:30 PM (Ceremonia & Recepción)');
   mapaUrl = signal<SafeResourceUrl>('');
 
   // 👇 Nueva señal para mostrar / ocultar cuentas
