@@ -8,7 +8,7 @@ import { Component, signal, OnInit, OnDestroy, inject, PLATFORM_ID } from '@angu
   styleUrl: './countdown.scss'
 })
 export class CountdownComponent implements OnInit, OnDestroy {
-  private targetDate = new Date('2026-01-14T16:00:00').getTime();
+  private targetDate = new Date('2026-01-31T17:30:00').getTime();
   days = signal('--');
   hours = signal('--');
   minutes = signal('--');
