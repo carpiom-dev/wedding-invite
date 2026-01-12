@@ -21,7 +21,7 @@ export class DetailsComponent {
   mostrarCuentas = signal(false);
 
   bancos = signal([
-    { nombre: 'Banco Pichincha', cuenta: '2211476630', tipo: 'Ahorros', titular: 'Maruri Rodríguez Josselyn Emily', email: 'emilymaruri6@gmail.com', cedula : '0944369198' },
+    { nombre: 'Banco Pichincha', cuenta: '2211461770', tipo: 'Ahorros', titular: 'Maruri Rodríguez Josselyn Emily', email: 'emilymaruri6@gmail.com', cedula : '0944369198' },
     { nombre: 'Banco Guayaquil', cuenta: '0051637865', tipo: 'Ahorros', titular: 'Maruri Rodríguez Josselyn Emily', email: 'emilymaruri6@gmail.com', cedula : '0944369198' },
   ]);
 
